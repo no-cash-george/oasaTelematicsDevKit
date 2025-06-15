@@ -1,5 +1,5 @@
 # oasaTelematicsDevKit
-##OASA Telematics API wrapper witten in swift
+## OASA Telematics API wrapper witten in swift
 
 Below Are the Methods that are done/will be done
 
