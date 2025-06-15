@@ -88,6 +88,80 @@ public struct RouteSchedule: Codable {
     public let go: [Arrival]
 }
 
+public struct ScheduleDaysOfMasterline: Codable
+{
+    public var description : String
+    public var descriptionEng : String
+    public var code : String
+    public var unknown : String?
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case description = "sdc_descr"
+        case descriptionEng = "sdc_descr_eng"
+        case code = "sdc_code"
+        case unknown = ""
+    }
+}
+
+public struct MasterLineRoutesLines : Codable
+{
+    public var start : String
+    public var startEng : String
+    public var lineCode : String
+    public var lineDescr : String
+    public var lineDescrEng : String
+    public var lineID : String
+    public var lineIDGr : String
+    public var sdcCode : String
+    public var endDestination : String
+    public var endDestinationEng : String
+    
+    enum CodingKeys: String, CodingKey {
+        case start = "afetiria"
+        case startEng = "afetiria_en"
+        case lineCode = "line_code"
+        case lineDescr = "line_descr"
+        case lineDescrEng = "line_descr_eng"
+        case lineID = "line_id"
+        case lineIDGr = "line_id_gr"
+        case sdcCode = "sdc_code"
+        case endDestination = "terma"
+        case endDestinationEng = "terma_en"
+    }
+    
+}
+
+public struct RouteForLine : Codable
+{
+    public var routeCode : String
+    public var routeID : String
+    public var routeDescr : String
+    public var routeActive : String
+    public var routeDescrEng : String
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case routeCode = "route_code"
+        case routeID = "route_id"
+        case routeDescr = "route_descr"
+        case routeActive = "route_active"
+        case routeDescrEng = "route_descr_eng"
+    }
+}
+
+public struct MLName : Codable
+{
+    public var name : String
+    public var nameEng : String
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case name = "name"
+        case nameEng = "name_en"
+    }
+}
+
 public struct webLine : Codable
 {
     public var lineCode : String

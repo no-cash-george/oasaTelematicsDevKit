@@ -3,14 +3,14 @@
 
 Below Are the Methods that are done/will be done
 
-* getStopArrivals
-* getBusLocation
-* getDailySchedule
-* getEsavlDirections
-* getScheduleDaysMasterline
-* getLinesAndRoutesForMl
-* getRoutesForLine
-* getMLName
+* getStopArrivals DONE
+* getBusLocation DONE
+* getDailySchedule DONE
+* getEsavlDirections NULL API RESPONCE
+* getScheduleDaysMasterline DONE
+* getLinesAndRoutesForMl DONE
+* getRoutesForLine DONE
+* getMLName DONE
 * getLineName
 * getLinesAndRoutesForMl
 * getLinesAndRoutesForMlandLCode
@@ -20,12 +20,12 @@ Below Are the Methods that are done/will be done
 * getStopNameAndXY
 * getSchedLines
 * getClosestStops
-* webGetLines
-* webGetLinesWithMLInfo
-* webGetRoutes
-* webGetStops
-* webRouteDetails
-* webRoutesForStop
-* webGetRoutesDetailsAndStops
-* webGetLangs
-* webGetMasterLines
+* webGetLines DONE
+* webGetLinesWithMLInfo DONE
+* webGetRoutes DONE
+* webGetStops DONE
+* webRouteDetails DONE
+* webRoutesForStop DONE
+* webGetRoutesDetailsAndStops DONE
+* webGetLangs DONE
+* webGetMasterLines DONE
