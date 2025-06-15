@@ -211,3 +211,25 @@ public struct webRouteForStop : Codable
         case masterLineCode = "MasterLineCode"
     }
 }
+
+public struct webMasterLine : Codable
+{
+    public var code : String
+    public var descr : String
+    public var descrEng : String?
+    public var id : String
+    public var sdcCode : String
+    public var lineCode : String
+    public var isComplex : String
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case code = "ml_code"
+        case descr = "ml_descr"
+        case descrEng = "ml_descr_eng"
+        case id = "ml_id"
+        case sdcCode = "sdc_code"
+        case lineCode = "line_code"
+        case isComplex = "is_complex"
+    }
+}

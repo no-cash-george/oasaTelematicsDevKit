@@ -156,6 +156,30 @@ public class Web
         }
     }
     
+    public static func webGetMasterLine() async throws -> [webMasterLine]
+    {
+        let urlString = "\(baseURL)?act=webGetMasterLines"
+        
+        guard let url = URL(string: urlString) else
+        {
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0", forHTTPHeaderField: "User-Agent")
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        do
+        {
+            let masterLines = try JSONDecoder().decode([webMasterLine].self, from: data)
+            return masterLines
+        }catch
+        {
+            throw error
+        }
+    }
+    
     enum APIError: Error {
         case invalidURL
         case noData
