@@ -1,7 +1,7 @@
-# oasaTelematicsDevKit
-## OASA Telematics API wrapper witten in swift
+# 🚍 oasaTelematicsDevKit
+## OASA Telematics API wrapper witten in swift 👨🏻‍💻
 
-The Base Url is 'http://telematics.oasa.gr/api/?act=action&p1=parameter1&p2=parameter2'
+The Base Url is 🔗 'http://telematics.oasa.gr/api/?act=action&p1=parameter1&p2=parameter2'
 
 Below Are the Methods implementantion status 
 
@@ -31,7 +31,7 @@ Below Are the Methods implementantion status
 * webGetLangs DONE
 * webGetMasterLines DONE
 
-##Base Api Endpoints
+## 🚌 Base Api Endpoints
 | Function                       | Description                      | Link/Call Example                                      |
 |-------------------------------|----------------------------------|--------------------------------------------------------|
 | `getStopArrivals`             | Get arrivals for a stop          | `act=getStopArrivals&stopCode=...`                    |
@@ -47,7 +47,7 @@ Below Are the Methods implementantion status
 | `getSchedLines`               | Scheduled lines                  | `act=getSchedLines`                                   |
 | `getClosestStops`             | Nearby stops                     | `act=getClosestStops&x=...&y=...`                     |
 
-##Web Api Endpoints
+## 🌐 Web Api Endpoints
 | Function                        | Description                      | Link/Call Example                                    |
 |--------------------------------|----------------------------------|------------------------------------------------------|
 | `webGetLines`                  | All lines                        | `act=webGetLines`                                   |
@@ -60,10 +60,20 @@ Below Are the Methods implementantion status
 | `webGetLangs`                  | Languages supported              | `act=webGetLangs`                                   |
 | `webGetMasterLines`            | Masterlines                      | `act=webGetMasterLines`                             |
 
-##Endpoints with null response (Probably Deprecated)
+## ❌ Endpoints with null response (Probably Deprecated)
 | Function                          | Status           | Notes                                |
 |----------------------------------|------------------|--------------------------------------|
 | `getEsavlDirections`             | NULL response    | Possibly deprecated                  |
 | `getLinesAndRoutesForMlandLCode` | NULL response    | May need valid line + ML code        |
 | `getPlaces`                      | NULL response    | Possibly geolocation-dependent       |
 | `getPlacesTypes`                 | NULL response    | Possibly unused in production        |
+
+## 🚀 Future Improvements
+
+In the future, I would like to streamline the process of interacting with the OASA Telematics API by introducing a layer of abstraction. This includes:
+
+- Creating **wrapper classes** for each major API group (e.g., routes, stops, lines), which will encapsulate raw API calls and simplify usage.
+- Designing a more **modular and abstracted architecture** to reduce redundancy and improve maintainability.
+- Enhancing **error handling and response parsing** to make the SDK more robust and developer-friendly.
+
+These improvements aim to make the codebase cleaner, easier to extend, and more intuitive for external developers to use.
