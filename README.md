@@ -2,6 +2,7 @@
 ## OASA Telematics API wrapper witten in swift 👨🏻‍💻
 
 Based of the official [script](http://telematics.oasa.gr/js/script.js)** and helped by the [documentation](https://oasa-telematics-api.readthedocs.io/en/latest/index.html) of it
+
 The Base Url is 🔗 'http://telematics.oasa.gr/api/?act=action&p1=parameter1&p2=parameter2'
 
 # Below Are the Methods implementantion status 
