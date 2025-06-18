@@ -3,34 +3,7 @@
 
 The Base Url is 🔗 'http://telematics.oasa.gr/api/?act=action&p1=parameter1&p2=parameter2'
 
-Below Are the Methods implementantion status 
-
-* getStopArrivals DONE
-* getBusLocation DONE
-* getDailySchedule DONE
-* getEsavlDirections NULL API RESPONCE
-* getScheduleDaysMasterline DONE
-* getLinesAndRoutesForMl DONE
-* getRoutesForLine DONE
-* getMLName DONE
-* getLineName DONE 
-* getLinesAndRoutesForMlandLCode NULL RESPONSE
-* getPlaces NULL RESPONSE 
-* getPlacesTypes NULL RESPONSE 
-* getRouteName DONE
-* getStopNameAndXY DONE
-* getSchedLines DONE
-* getClosestStops DONE
-* webGetLines DONE
-* webGetLinesWithMLInfo DONE
-* webGetRoutes DONE
-* webGetStops DONE
-* webRouteDetails DONE
-* webRoutesForStop DONE
-* webGetRoutesDetailsAndStops DONE
-* webGetLangs DONE
-* webGetMasterLines DONE
-
+# Below Are the Methods implementantion status 
 ## 🚌 Base Api Endpoints
 
 | Function                       | Description                      | Link/Call Example                                      |
