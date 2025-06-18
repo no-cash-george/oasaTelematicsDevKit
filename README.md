@@ -31,6 +31,7 @@ Below Are the Methods implementantion status
 * webGetLangs DONE
 * webGetMasterLines DONE
 
+##Base Api Endpoints
 | Function                       | Description                      | Link/Call Example                                      |
 |-------------------------------|----------------------------------|--------------------------------------------------------|
 | `getStopArrivals`             | Get arrivals for a stop          | `act=getStopArrivals&stopCode=...`                    |
@@ -46,6 +47,7 @@ Below Are the Methods implementantion status
 | `getSchedLines`               | Scheduled lines                  | `act=getSchedLines`                                   |
 | `getClosestStops`             | Nearby stops                     | `act=getClosestStops&x=...&y=...`                     |
 
+##Web Api Endpoints
 | Function                        | Description                      | Link/Call Example                                    |
 |--------------------------------|----------------------------------|------------------------------------------------------|
 | `webGetLines`                  | All lines                        | `act=webGetLines`                                   |
@@ -58,6 +60,7 @@ Below Are the Methods implementantion status
 | `webGetLangs`                  | Languages supported              | `act=webGetLangs`                                   |
 | `webGetMasterLines`            | Masterlines                      | `act=webGetMasterLines`                             |
 
+##Endpoints with null response (Probably Deprecated)
 | Function                          | Status           | Notes                                |
 |----------------------------------|------------------|--------------------------------------|
 | `getEsavlDirections`             | NULL response    | Possibly deprecated                  |
