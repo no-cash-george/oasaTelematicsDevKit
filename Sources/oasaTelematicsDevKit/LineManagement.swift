@@ -123,6 +123,77 @@ public class LineManagement
         }
     }
     
+    public static func getLineName(linecode : String) async throws -> LineName
+    {
+        let urlString = "\(baseURL)?act=getLineName&p1=\(linecode)"
+        
+        guard let url = URL(string: urlString) else {
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0", forHTTPHeaderField: "User-Agent")
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        do
+        {
+            let lineName = try JSONDecoder().decode(LineName.self, from: data)
+            return lineName
+        }catch
+        {
+            throw error
+        }
+    }
+    
+    public static func getRouteName(routeCode : String) async throws -> RouteName
+    {
+        let urlString = "\(baseURL)?act=getRouteName&p1=\(routeCode)"
+        
+        guard let url = URL(string: urlString) else {
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0", forHTTPHeaderField: "User-Agent")
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        do
+        {
+            let routeName = try JSONDecoder().decode(RouteName.self, from: data)
+            return routeName
+        }catch
+        {
+            throw error
+        }
+    }
+    
+    public static func getSchedLines(mlCode : String, lineCode : String, sdcCode : String) async throws -> ScheduledLines
+    {
+        let urlString = "\(baseURL)?act=getSchedLines&p1=\(mlCode)&p2=\(sdcCode)&p3=\(lineCode)"
+        
+        guard let url = URL(string : urlString) else{
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0", forHTTPHeaderField: "User-Agent")
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        do
+        {
+            let schedLines = try JSONDecoder().decode(ScheduledLines.self, from: data)
+            return schedLines
+        }catch
+        {
+            throw error
+        }
+    }
+    
+    
+    
     enum APIError: Error {
             case invalidURL
             case noData

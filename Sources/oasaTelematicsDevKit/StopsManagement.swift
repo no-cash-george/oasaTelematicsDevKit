@@ -30,6 +30,52 @@ public class StopManagement
             throw error
         }
     }
+    
+    public static func getStopNameAndXY(stopCode : String) async throws -> stopNameAndCoords
+    {
+        let urlString = "\(baseURL)?act=getStopNameAndXY&p1=\(stopCode)"
+        
+        guard let url = URL(string : urlString) else{
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0", forHTTPHeaderField: "User-Agent")
+
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        do
+        {
+            let stop = try JSONDecoder().decode(stopNameAndCoords.self, from: data)
+            return stop
+        }catch
+        {
+            throw error
+        }
+    }
+    
+    public static func getClosestStop(longitude : String, latitude : String) async throws -> [webStop]
+    {
+        let urlString = "\(baseURL)?act=getClosestStops&p1=\(longitude)&p2=\(latitude)"
+        
+        guard let url = URL(string : urlString) else{
+            throw APIError.invalidURL
+        }
+        
+        var request = URLRequest(url: url)
+        request.setValue("Mozilla/5.0", forHTTPHeaderField: "User-Agent")
+        
+        let (data, _) = try await URLSession.shared.data(for: request)
+        
+        do
+        {
+            let stops = try JSONDecoder().decode([webStop].self, from: data)
+            return stops
+        }catch
+        {
+            throw error
+        }
+    }
 
     enum APIError: Error {
         case invalidURL

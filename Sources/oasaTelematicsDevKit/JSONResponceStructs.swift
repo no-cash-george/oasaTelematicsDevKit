@@ -157,10 +157,105 @@ public struct MLName : Codable
     
     enum CodingKeys : String, CodingKey
     {
-        case name = "name"
-        case nameEng = "name_en"
+        case name = "ml_descr"
+        case nameEng = "ml_descr_eng"
     }
 }
+
+public struct LineName : Codable
+{
+    public var name : String
+    public var nameEng : String
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case name = "line_descr"
+        case nameEng = "line_descr_eng"
+    }
+}
+
+public struct RouteName : Codable
+{
+    public var name : String
+    public var nameEng : String
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case name = "route_descr"
+        case nameEng = "route_descr_eng"
+    }
+}
+
+public struct stopNameAndCoords : Codable
+{
+    public var stopName : String
+    public var stopNameEng : String
+    public var stopLat : String
+    public var stopLong : String
+    public var stopHeading : String
+    public var stopID : String
+    
+    enum CodingKeys : String, CodingKey
+    {
+        case stopName = "stop_descr"
+        case stopNameEng = "stop_descr_matrix_eng"
+        case stopLat = "stop_lat"
+        case stopLong = "stop_lng"
+        case stopHeading = "stop_heading"
+        case stopID = "stop_id"
+    }
+}
+
+public struct ScheduledLines: Decodable {
+    public var come: [ScheduleEntry]
+    public var go: [ScheduleEntry]
+}
+
+public struct ScheduleEntry: Decodable {
+    public var lineID: String
+    public var sdeCode: String
+    public var sdcCode: String
+    public var sdsCode: String
+    public var sdeAA: String
+    public var sdeLine1: String
+    public var sdeKP1: String
+    public var sdeStart1: String
+    public var sdeEnd1: String
+    public var sdeLine2: String
+    public var sdeKP2: String
+    public var sdeStart2: String
+    public var sdeEnd2: String
+    public var sdeSort: String
+    public var sdeDescr1: String?
+    public var sdeDescr2: String?
+    public var lineCircle: String
+    public var lineDescr: String
+    public var lineDescrEng: String
+
+    enum CodingKeys: String, CodingKey {
+        case lineID = "line_id"
+        case sdeCode = "sde_code"
+        case sdcCode = "sdc_code"
+        case sdsCode = "sds_code"
+        case sdeAA = "sde_aa"
+        case sdeLine1 = "sde_line1"
+        case sdeKP1 = "sde_kp1"
+        case sdeStart1 = "sde_start1"
+        case sdeEnd1 = "sde_end1"
+        case sdeLine2 = "sde_line2"
+        case sdeKP2 = "sde_kp2"
+        case sdeStart2 = "sde_start2"
+        case sdeEnd2 = "sde_end2"
+        case sdeSort = "sde_sort"
+        case sdeDescr1 = "sde_descr1"
+        case sdeDescr2 = "sde_descr2"
+        case lineCircle = "line_circle"
+        case lineDescr = "line_descr"
+        case lineDescrEng = "line_descr_eng"
+    }
+}
+
+
 
 public struct webLine : Codable
 {
