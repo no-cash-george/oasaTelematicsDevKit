@@ -54,3 +54,6 @@ In the future, I would like to streamline the process of interacting with the OA
 - Enhancing **error handling and response parsing** to make the SDK more robust and developer-friendly.
 
 These improvements aim to make the codebase cleaner, easier to extend, and more intuitive for external developers to use.
+
+**Made because the official app is BAD by [no_cash_george](https://github.com/no-cash-george)**
+
