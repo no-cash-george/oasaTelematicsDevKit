@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct StopArrivals : Codable
+public struct StopArrivals : Codable, Sendable
 {
     public var routeCode : String
     public var vehicleCode : String
@@ -21,7 +21,7 @@ public struct StopArrivals : Codable
     }
 }
 
-public struct BusLocation : Codable
+public struct BusLocation : Codable, Sendable
 {
     public var vehicleNumber : String
     public var lastUpdate : String
@@ -39,7 +39,7 @@ public struct BusLocation : Codable
     }
 }
 
-public struct Arrival: Codable {
+public struct Arrival: Codable, Sendable {
     public let lineID: String
     public let sddCode: String
     public let sdcCode: String
@@ -83,12 +83,12 @@ public struct Arrival: Codable {
     }
 }
 
-public struct RouteSchedule: Codable {
+public struct RouteSchedule: Codable, Sendable {
     public let come: [Arrival]
     public let go: [Arrival]
 }
 
-public struct ScheduleDaysOfMasterline: Codable
+public struct ScheduleDaysOfMasterline: Codable, Sendable
 {
     public var description : String
     public var descriptionEng : String
@@ -104,7 +104,7 @@ public struct ScheduleDaysOfMasterline: Codable
     }
 }
 
-public struct MasterLineRoutesLines : Codable
+public struct MasterLineRoutesLines : Codable, Sendable
 {
     public var start : String
     public var startEng : String
@@ -132,7 +132,7 @@ public struct MasterLineRoutesLines : Codable
     
 }
 
-public struct RouteForLine : Codable
+public struct RouteForLine : Codable, Sendable
 {
     public var routeCode : String
     public var routeID : String
@@ -150,7 +150,7 @@ public struct RouteForLine : Codable
     }
 }
 
-public struct MLName : Codable
+public struct MLName : Codable, Sendable
 {
     public var name : String
     public var nameEng : String
@@ -162,7 +162,7 @@ public struct MLName : Codable
     }
 }
 
-public struct LineName : Codable
+public struct LineName : Codable, Sendable
 {
     public var name : String
     public var nameEng : String
@@ -174,7 +174,7 @@ public struct LineName : Codable
     }
 }
 
-public struct RouteName : Codable
+public struct RouteName : Codable, Sendable
 {
     public var name : String
     public var nameEng : String
@@ -186,7 +186,7 @@ public struct RouteName : Codable
     }
 }
 
-public struct stopNameAndCoords : Codable
+public struct stopNameAndCoords : Codable, Sendable
 {
     public var stopName : String
     public var stopNameEng : String
@@ -206,12 +206,12 @@ public struct stopNameAndCoords : Codable
     }
 }
 
-public struct ScheduledLines: Decodable {
+public struct ScheduledLines: Codable, Sendable {
     public var come: [ScheduleEntry]
     public var go: [ScheduleEntry]
 }
 
-public struct ScheduleEntry: Decodable {
+public struct ScheduleEntry: Codable, Sendable {
     public var lineID: String
     public var sdeCode: String
     public var sdcCode: String
@@ -257,7 +257,7 @@ public struct ScheduleEntry: Decodable {
 
 
 
-public struct webLine : Codable
+public struct webLine : Codable, Sendable
 {
     public var lineCode : String
     public var lineID : String
@@ -272,7 +272,7 @@ public struct webLine : Codable
     }
 }
 
-public struct webLineMLInfo : Codable
+public struct webLineMLInfo : Codable, Sendable
 {
     public var mlCode : String //Identifier που έχει να κάνει με την περιοχή έναρξης. (Help needed) Πιθανότατα το ml αντιστοιχεί στο MasterLine.
     public var sdcCode : String // Identifier για το ωράριο που ακολουθεί η γραμμή, δες getSchedLines και getScheduleDaysMasterLine. Τι στον πουτσο ΟΑΣΑ
@@ -291,7 +291,7 @@ public struct webLineMLInfo : Codable
     }
 }
 
-public struct webRoute : Codable
+public struct webRoute : Codable, Sendable
 {
     public var routeCode : String
     public var lineCode : String
@@ -310,7 +310,7 @@ public struct webRoute : Codable
     }
 }
 
-public struct webStop : Codable
+public struct webStop : Codable, Sendable
 {
     public var stopCode : String
     public var stopID : String
@@ -341,7 +341,7 @@ public struct webStop : Codable
     }
 }
 
-public struct webRouteDetail : Codable
+public struct webRouteDetail : Codable, Sendable
 {
     public var locationX : String
     public var locationY : String
@@ -354,7 +354,7 @@ public struct webRouteDetail : Codable
     }
 }
 
-public struct webRouteForStop : Codable
+public struct webRouteForStop : Codable, Sendable
 {
     public var routeCode : String
     public var lineCode : String
@@ -381,18 +381,16 @@ public struct webRouteForStop : Codable
     }
 }
 
-public struct webMasterLine : Codable
-{
-    public var code : String
-    public var descr : String
-    public var descrEng : String?
-    public var id : String
-    public var sdcCode : String
-    public var lineCode : String
-    public var isComplex : String
-    
-    enum CodingKeys : String, CodingKey
-    {
+public struct webMasterLine: Codable, Sendable {
+    public var code: String
+    public var descr: String
+    public var descrEng: String?
+    public var id: String
+    public var sdcCode: String
+    public var lineCode: String
+    public var isComplex: String
+
+    enum CodingKeys: String, CodingKey {
         case code = "ml_code"
         case descr = "ml_descr"
         case descrEng = "ml_descr_eng"
@@ -400,5 +398,23 @@ public struct webMasterLine : Codable
         case sdcCode = "sdc_code"
         case lineCode = "line_code"
         case isComplex = "is_complex"
+    }
+
+    public init(
+        code: String,
+        descr: String,
+        descrEng: String? = nil,
+        id: String,
+        sdcCode: String,
+        lineCode: String,
+        isComplex: String
+    ) {
+        self.code = code
+        self.descr = descr
+        self.descrEng = descrEng
+        self.id = id
+        self.sdcCode = sdcCode
+        self.lineCode = lineCode
+        self.isComplex = isComplex
     }
 }
