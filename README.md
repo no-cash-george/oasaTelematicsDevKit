@@ -1,36 +1,11 @@
 # 🚍 oasaTelematicsDevKit
 ## OASA Telematics API wrapper witten in swift 👨🏻‍💻
 
+Based of the official [script](http://telematics.oasa.gr/js/script.js)** and helped by the [documentation](https://oasa-telematics-api.readthedocs.io/en/latest/index.html) of it
+
 The Base Url is 🔗 'http://telematics.oasa.gr/api/?act=action&p1=parameter1&p2=parameter2'
 
-Below Are the Methods implementantion status 
-
-* getStopArrivals DONE
-* getBusLocation DONE
-* getDailySchedule DONE
-* getEsavlDirections NULL API RESPONCE
-* getScheduleDaysMasterline DONE
-* getLinesAndRoutesForMl DONE
-* getRoutesForLine DONE
-* getMLName DONE
-* getLineName DONE 
-* getLinesAndRoutesForMlandLCode NULL RESPONSE
-* getPlaces NULL RESPONSE 
-* getPlacesTypes NULL RESPONSE 
-* getRouteName DONE
-* getStopNameAndXY DONE
-* getSchedLines DONE
-* getClosestStops DONE
-* webGetLines DONE
-* webGetLinesWithMLInfo DONE
-* webGetRoutes DONE
-* webGetStops DONE
-* webRouteDetails DONE
-* webRoutesForStop DONE
-* webGetRoutesDetailsAndStops DONE
-* webGetLangs DONE
-* webGetMasterLines DONE
-
+# Below Are the Methods implementantion status 
 ## 🚌 Base Api Endpoints
 
 | Function                       | Description                      | Link/Call Example                                      |
@@ -81,3 +56,6 @@ In the future, I would like to streamline the process of interacting with the OA
 - Enhancing **error handling and response parsing** to make the SDK more robust and developer-friendly.
 
 These improvements aim to make the codebase cleaner, easier to extend, and more intuitive for external developers to use.
+
+**Made because the official app is BAD by [no_cash_george](https://github.com/no-cash-george)**
+
